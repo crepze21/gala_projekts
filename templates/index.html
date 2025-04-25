@@ -2,18 +2,25 @@
 
 {% block body %}
     <h1 class = "virsraksts">Pieteikšanās turnīram</h1>
-    <form action="/registration" method="post"></form>
-        <div>Kommandas nosaukums<input type="text" name="name"></div>
-        <div>Kommandas kapteiņa vārds<input type="text" name="name">
-            Kommandas kapteiņa Steam ID<input type="text" name="name"></div>
-        <div>1.spēlētāja vārds<input type="text" name="name">
-            1.spēlētāja Steam ID<input type="text" name="name"></div>
-        <div>2.spēlētāja vārds<input type="text" name="name">
-            2.spēlētāja Steam ID<input type="text" name="name"></div>
-        <div>3.spēlētāja vārds<input type="text" name="name">
-            3.spēlētāja Steam ID<input type="text" name="name"></div>
-        <div>4.spēlētāja vārds<input type="text" name="name">
-            4.spēlētāja Steam ID<input type="text" name="name"></div>
-        
+    <form method="post">
+        <div>Kommandas nosaukums<input type="text" name="nosaukums"></div>
+        <div>Kommandas kapteiņa vārds<input type="text" name="name_kaptain">
+            Kommandas kapteiņa Steam ID<input type="text" name="steam_id_kaptain"></div>
+        <div>1.spēlētāja vārds<input type="text" name="name_speletajs_1">
+            1.spēlētāja Steam ID<input type="text" name="steam_id_1"></div>
+        <div>2.spēlētāja vārds<input type="text" name="name_speletajs_2">
+            2.spēlētāja Steam ID<input type="text" name="steam_id_2"></div>
+        <div>3.spēlētāja vārds<input type="text" name="name_speletajs_3">
+            3.spēlētāja Steam ID<input type="text" name="steam_id_3"></div>
+        <div>4.spēlētāja vārds<input type="text" name="name_speletajs_4">
+            4.spēlētāja Steam ID<input type="text" name="steam_id_4"></div>
+
+        <div><button type="submit">Iesniegt kommandu</button></div>
+        {% if kluda == False: %}
+            <a action="/registration"></a>
+        {% else: %}
+            <div>Nevar iesniegt jo nav aizpildīti visi laukumi.</div>
+        {% endif %}
+    </form>
         
 {% endblock %}

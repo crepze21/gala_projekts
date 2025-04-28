@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1 class = "virsraksts">Pieteikšanās turnīram</h1>
-    <form method="post">
+    <form action="/registration" method="post">
         <div>Kommandas nosaukums<input type="text" name="nosaukums"></div>
         <div>Kommandas kapteiņa vārds<input type="text" name="name_kaptain">
             Kommandas kapteiņa Steam ID<input type="text" name="steam_id_kaptain"></div>
@@ -16,11 +16,7 @@
             4.spēlētāja Steam ID<input type="text" name="steam_id_4"></div>
 
         <div><button type="submit">Iesniegt kommandu</button></div>
-        {% if kluda == False: %}
-            <a action="/registration"></a>
-        {% else: %}
-            <div>Nevar iesniegt jo nav aizpildīti visi laukumi.</div>
-        {% endif %}
+
     </form>
         
 {% endblock %}

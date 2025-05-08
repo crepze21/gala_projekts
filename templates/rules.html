@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block title %}Noteikumi - Counter-Strike Turnīri{% endblock %}
+
+{% block content %}
+<section class="rules">
+  <h2>NOTEIKUMI</h2>
+  <p>
+    {% for line in rules %}
+      {{ line }}<br>
+    {% endfor %}
+  </p>
+</section>
+{% endblock %}

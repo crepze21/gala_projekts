@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block title %}Turnīri - Counter-Strike Turnīri{% endblock %}
+
+{% block content %}
+<section class="tournament-card">
+  <div class="tournament-logo">[ESL LOGO IMAGE]</div>
+  <div class="tournament-info">
+    <h3>{{ tournament.name }}</h3>
+    <p>{{ tournament.dates }}</p>
+    <p>{{ tournament.prize }}</p>
+  </div>
+  <button class="apply-button">PIETEIKTIES</button>
+</section>
+{% endblock %}

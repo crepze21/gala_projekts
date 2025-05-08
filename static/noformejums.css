@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #000;
+  }
+  
+  header {
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  main {
+    background-color: #ccc;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .tournament-img,
+  .logo-large,
+  .tournament-logo {
+    width: 100%;
+    height: 200px;
+    background-color: #aaa;
+    text-align: center;
+    line-height: 200px;
+  }
+  
+  .past-tournaments ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .rules p {
+    white-space: pre-wrap;
+    margin-top: 10px;
+  }
+  
+  .tournament-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .tournament-info h3 {
+    margin: 0;
+  }

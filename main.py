@@ -1,14 +1,30 @@
 from flask import Flask, render_template
-import sqlite3
 
 app = Flask(__name__)
-conn = sqlite3.connect("static/data.db")
 
-
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    past_tournaments = ['CHAMPIONS2020', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS']
+    return render_template('main.html', past_tournaments=past_tournaments)
 
-#palaiž mājaslapu
+@app.route('/rules')
+def rules():
+    rules = [
+        "gfaojngfacfdsdsdfdfdssdfdafdfdfd",
+        "2/.vbfbbfdbfbfdddddddddddddddddddd",
+        "4.nsdasfdsdd4",
+        "g/wgq", "gd", "b", "r", "hg", "r"
+    ]
+    return render_template('rules.html', rules=rules)
+
+@app.route('/tournaments')
+def tournaments():
+    tournament = {
+        "name": "ESL Pro League Season - 21",
+        "dates": "30.04 - 12.05",
+        "prize": "1 000 000 $"
+    }
+    return render_template('tournaments.html', tournament=tournament)
+
 if __name__ == "__main__":
     app.run(debug=True)

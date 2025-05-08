@@ -1,5 +1,22 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Counter-Strike Turnīri{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='noformejums.css') }}">
+</head>
+<body>
+  <header>
+    <div class="logo">[LOGO IMAGE]</div>
+    <nav>
+      <a href="{{ url_for('main') }}">PAR MUMS</a>
+      <a href="{{ url_for('tournaments') }}">TURNĪRI</a>
+      <a href="{{ url_for('rules.html') }}">NOTEIKUMI</a>
+    </nav>
+  </header>
 
-{% block body %}
-    <h1 class = "virsraksts">Mana mājaslapa</h1>
-{% endblock %}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

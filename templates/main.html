@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %}Sākumlapa - Counter-Strike Turnīri{% endblock %}
+
+{% block content %}
+<section class="tournament-img">[PAST TOURNAMENT IMAGE]</section>
+
+<section class="past-tournaments">
+  <h2>PAGĀJUŠIE TURNĪRI</h2>
+  <ul>
+    {% for tournament in past_tournaments %}
+      <li>{{ tournament }}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="about">
+  <div class="logo-large">[LOGO IMAGE]</div>
+  <div>
+    <h2>PAR MUMS</h2>
+    <p>
+      MĒS ESAM DATORSPEĻES "COUNTER-STRIKE 2" TURNĪRU ORGANIZĒTĀJU GRUPA<br>
+      "COUNTER-STRIKE TURNĪRI"<br>
+      AR TURNĪRU ORGANIZĒŠANU NODARBOJAMIES 8 GADUS UN ESAM VADOŠĀ TURNĪRU ORGANIZĀCIJA
+    </p>
+  </div>
+</section>
+{% endblock %}

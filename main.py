@@ -4,27 +4,30 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    past_tournaments = ['CHAMPIONS2020', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS']
+    past_tournaments = ['IEM MELBOURNE 2025 CHAMPIONS', 'TEAM VITALITY', 'ZywOo', 'Ropz', 'apEX', 'flameZ', 'mezii']
     return render_template('index.html', past_tournaments=past_tournaments)
 
 @app.route('/rules')
 def rules():
     rules = [
-        'gfaojngfacfdsdsdfdfdssdfdafdfdfd',
-        '2/.vbfbbfdbfbfdddddddddddddddddddd',
-        '4.nsdasfdsdd4',
-        'g/wgq', 'gd', 'b', 'r', 'hg', 'r'
+        
     ]
     return render_template('rules.html', rules=rules)
 
 @app.route('/tournaments')
 def tournaments():
     tournament = {
-        "name": "ESL Pro League Season - 21",
-        "dates": "30.04 - 12.05",
+        "name": "ESL Pro League Season - 21 ",
+        "dates": "30.04 - 12.05 ",
         "prize": "1 000 000 $"
     }
     return render_template('tournaments.html', tournament=tournament)
 
+@app.route('/registracija')
+def registracija():
+    registracija = {
+
+    }
+    return render_template('registracija.html')
 if __name__ == "__main__":
     app.run(debug=True)

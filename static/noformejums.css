@@ -12,6 +12,23 @@ body {
     justify-content: space-between;
     padding: 10px 20px;
   }
+  .header-left {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
   
   .logo {
     width: 150px;
@@ -64,11 +81,38 @@ body {
   .tournament-card {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: white;
-    padding: 15px;
-    gap: 20px;
-    margin-top: 20px;
-  }
+    padding: 10px;
+    margin: 10px;
+}
+
+  .tournament-card1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+  .tournament-card2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.tournament-card img {
+    margin-right: 15px;
+}
+
+.apply-btn {
+    margin-left: auto;
+    padding: 5px 10px;
+}
+
   
   .tournament-info h3 {
     margin: 0;

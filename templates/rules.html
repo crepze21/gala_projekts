@@ -1,14 +1,45 @@
-{% extends 'index.html' %}
-
-{% block title %}Noteikumi - Counter-Strike Turnīri{% endblock %}
-
+{% extends "layout.html" %}
 {% block content %}
-<section class="rules">
-  <h2>NOTEIKUMI</h2>
-  <p>
-    {% for line in rules %}
-      {{ line }}<br>
-    {% endfor %}
-  </p>
-</section>
+<div class="rules-section" style="max-width: 800px; margin: left; padding: 20px;">
+    <h2>CS2 TURNĪRA NOTEIKUMI</h2>
+
+    <h3>1. Vispārīgie noteikumi</h3>
+    <ul>
+        <li>Turnīrs norisinās <strong>online/lokāli</strong>.</li>
+        <li>Komandām jāierodas vismaz <strong>15 minūtes pirms</strong> spēles.</li>
+        <li>Aizliegts izmantot <strong>čītus, skriptus</strong> vai aizliegtu programmatūru.</li>
+    </ul>
+
+    <h3>2. Komandu sastāvs</h3>
+    <ul>
+        <li>5 spēlētāji komandā + līdz 2 rezervisti.</li>
+        <li>Spēlētāji nedrīkst spēlēt vairākās komandās.</li>
+        <li>Nepiedienīgi nosaukumi nav atļauti.</li>
+    </ul>
+
+    <h3>3. Spēles iestatījumi</h3>
+    <ul>
+        <li>Formāts: <strong>Bo1 grupās</strong>, <strong>Bo3 izslēgšanas spēlēs</strong>.</li>
+        <li>Kartes: Mirage, Inferno, Nuke, Anubis, u.c. pēc <em>map veto</em>.</li>
+        <li>Serveris: Valve config vai turnīra konfigurācija.</li>
+    </ul>
+
+    <h3>4. Diskvalifikācija un kavējumi</h3>
+    <ul>
+        <li>Kavēšanās >10 min = zaudējums.</li>
+        <li>Toxic uzvedība = brīdinājums vai diskvalifikācija.</li>
+    </ul>
+
+    <h3>5. Rezultāti un pierādījumi</h3>
+    <ul>
+        <li>Uzvarētājs iesniedz <strong>screenshot</strong> ar rezultātu.</li>
+        <li>Strīdu gadījumā jāsniedz demo/replay fails.</li>
+    </ul>
+
+    <h3>6. Balvas</h3>
+    <ul>
+        <li>Balvas tiek piešķirtas <strong>Top 3 komandām</strong>.</li>
+        <li>Izmaksas komandkapteinim pēc turnīra beigām.</li>
+    </ul>
+</div>
 {% endblock %}

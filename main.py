@@ -5,15 +5,15 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     past_tournaments = ['CHAMPIONS2020', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS', 'DS']
-    return render_template('main.html', past_tournaments=past_tournaments)
+    return render_template('index.html', past_tournaments=past_tournaments)
 
 @app.route('/rules')
 def rules():
     rules = [
-        "gfaojngfacfdsdsdfdfdssdfdafdfdfd",
-        "2/.vbfbbfdbfbfdddddddddddddddddddd",
-        "4.nsdasfdsdd4",
-        "g/wgq", "gd", "b", "r", "hg", "r"
+        'gfaojngfacfdsdsdfdfdssdfdafdfdfd',
+        '2/.vbfbbfdbfbfdddddddddddddddddddd',
+        '4.nsdasfdsdd4',
+        'g/wgq', 'gd', 'b', 'r', 'hg', 'r'
     ]
     return render_template('rules.html', rules=rules)
 

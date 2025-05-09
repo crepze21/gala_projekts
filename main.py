@@ -7,7 +7,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    past_tournaments = ['IEM MELBOURNE 2025 CHAMPIONS', 'TEAM VITALITY', 'ZywOo', 'Ropz', 'apEX', 'flameZ', 'mezii']
+    conn = sqlite3.connect("static/ESL.db")
+    pirma_vieta = conn.execute("SELECT pirma_vieta FROM turnirs WHERE id = 1").fetchone()
+    otra_vieta = conn.execute("SELECT otra_vieta FROM turnirs WHERE id = 1").fetchone()
+    tresa_vieta = conn.execute("SELECT tresa_vieta FROM turnirs WHERE id = 1").fetchone()
+    past_tournaments = ['IEM MELBOURNE 2025 CHAMPIONS', f"1. {pirma_vieta[0]}", f"2. {otra_vieta[0]}", f"3. {tresa_vieta[0]}"]
     return render_template('index.html', past_tournaments=past_tournaments)
 
 @app.route('/rules')
@@ -53,24 +57,23 @@ def registracija_BLASTtv():
 @app.route('/pieteikts', methods=['GET','POST'])
 def pieteikts():
     
-    
     global turnira_nosaukums
-    turnira_nosaukums = "ESL Pro League Season - 21"
-    trn_nosaukums = turnira_nosaukums
+
     global turnira_sais
-    turnira_sais = "ESL"
+
     pieteikta_kmd = kommanda(request.form.get("kmd_nosaukums"),
                              request.form.get("kpt_steam_vards"),request.form.get('kpt_vards'),request.form.get('kpt_uzvards'),
-                             request.form.get("kpt_steam_vards"),request.form.get('kpt_vards'),request.form.get('kpt_uzvards'),
-                             request.form.get("kpt_steam_vards"),request.form.get('kpt_vards'),request.form.get('kpt_uzvards'),
-                             request.form.get("kpt_steam_vards"),request.form.get('kpt_vards'),request.form.get('kpt_uzvards'),
-                             request.form.get("kpt_steam_vards"),request.form.get('kpt_vards'),request.form.get('kpt_uzvards'),
-                             turnira_sais
+                             request.form.get("spl_1_steam_vards"),request.form.get('spl_1_vards'),request.form.get('spl_1_uzvards'),
+                             request.form.get("spl_2_steam_vards"),request.form.get('spl_2_vards'),request.form.get('spl_2_uzvards'),
+                             request.form.get("spl_3_steam_vards"),request.form.get('spl_3_vards'),request.form.get('spl_3_uzvards'),
+                             request.form.get("spl_4_steam_vards"),request.form.get('spl_4_vards'),request.form.get('spl_4_uzvards'),
+                             turnira_nosaukums
                              )
-    turnirs = tabula(f"static/{turnira_sais}.db",turnira_sais)
+    
+    turnirs = tabula(f"static/{turnira_sais}.db",turnira_nosaukums)
     turnirs.ierakstit_kommandu(pieteikta_kmd.get_all())
 
-    return render_template('pieteikts.html', kmd_nosaukums=pieteikta_kmd.__str__(), trn_nosaukums=trn_nosaukums )
+    return render_template('pieteikts.html', kmd_nosaukums=pieteikta_kmd.__str__(), trn_nosaukums=turnira_nosaukums )
 
 
 if __name__ == "__main__":

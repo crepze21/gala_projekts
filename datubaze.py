@@ -84,35 +84,6 @@ class kommanda():
                 ]
 
 
-# class turnirs:
-    
-#     def __init__(self, nosaukums, kommanda_1, kommanda_2, kommanda_3, kommanda_4, kommanda_5, kommanda_6, kommanda_7, kommanda_8):
-#         self.nosaukums = nosaukums
-
-#         self.kmd_1 = kommanda_1
-#         self.kmd_2 = kommanda_2
-#         self.kmd_3 = kommanda_3
-#         self.kmd_4 = kommanda_4
-#         self.kmd_5 = kommanda_5
-#         self.kmd_6 = kommanda_6
-#         self.kmd_7 = kommanda_7
-#         self.kmd_8 = kommanda_8
-    
-#     def __str__(self):
-#         return self.nosaukums
-    
-#     def get_kommandas(self):
-#         return [
-#             self.kmd_1,
-#             self.kmd_2,
-#             self.kmd_3,
-#             self.kmd_4,
-#             self.kmd_5,
-#             self.kmd_6,
-#             self.kmd_7,
-#             self.kmd_8,
-#         ]
-    
 class tabula:
 
     def __init__(self, datu_links, turnira_nosaukums):
@@ -149,14 +120,21 @@ class tabula:
                 PRIMARY KEY("id")
                 )""")
         
+        cursor = self.conn.execute("""SELECT
+        CASE
+        WHEN EXISTS(SELECT nosaukums FROM turnirs WHERE nosaukums = ?) THEN 'Exists'
+        ELSE 'Not_exists'
+        END;""",(turnira_nosaukums,))
+        paties = cursor.fetchone()
+
+        if paties[0] == "Not_exists":
+            self.conn.execute("INSERT INTO turnirs (nosaukums) VALUES (?)",(turnira_nosaukums,))
+            self.conn.commit()
         
-        #self.conn.execute("INSERT INTO turnirs (nosaukums) VALUES (?)",(turnira_nosaukums,))
-        self.conn.commit()
 
         turnira_id =self.conn.execute(f"SELECT id FROM turnirs WHERE nosaukums = ?",(turnira_nosaukums,))
         turnira_id_pag = turnira_id.fetchall()
         self.trn_id = turnira_id_pag[0][0]
-        print(self.trn_id)
 
     def ierakstit_kommandu(self, kommanda_viss):
 
@@ -182,10 +160,9 @@ def main():
 #     kommanda1 = kommanda("Gurķīši",1111,"Kristaps","Rūtainis",2222,"Mārtiņš","Zaķis",3333,"Evards","Gleizds",4444,"Kristijāns","Ligeris",5555,"Jānis","Kazerovskis","Milzu turnīrs")
 #     print(kommanda1.get_all())
 
-#     turnirs_1 = tabula("milzu_turnirs.db","Milzu turnīrs")
+    turnirs_1 = tabula("milzu_turnirs.db","Milzu turnīrs")
 #     #turnirs_1.ierakstit_kommandu(kommanda1.get_all())
 #     print(turnirs_1.izvadit_dalibniekus())
-    test = "test"
-    turnirs_2 = tabula(f"{test}.db","testa")
+
 if __name__=="__main__":
     main()

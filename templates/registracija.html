@@ -1,5 +1,35 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<div><h1>Turnīrs {{ nosaukums_trn }}</h1></div>
+<form action="/pieteikts" method="post">
+        <label>kommandas nosaukums:</label><input type="text" name="kmd_nosaukums" required>
+    <div>
+        <label>Kapteiņa vārds</label><input type="text" name="kpt_vards" required>
+        <label>Kapteiņa uzvārds:</label><input type="text" name="kpt_uzvards" required>
+        <label>kapteiņa steam vārds:</label><input type="text" name="kpt_steam_vards" required>
+    </div>
+    <div>
+        <label>Spēlētāja 1 vārds:</label><input type="text" name="spl_1_vards" required>
+        <label>Spēlētāja 1 uzvārds:</label><input type="text" name="spl_1_uzvards" required>
+        <label>Spēlētāja 1 steam vārds:</label><input type="text" name="spl_1_steam_vards" required>
+    </div>
+    <div>
+        <label>Spēlētāja 2 vārds:</label><input type="text" name="spl_2_vards" required>
+        <label>Spēlētāja 2 uzvārds:</label><input type="text" name="spl_2_uzvards" required>
+        <label> Spēlētāja 2 steam vārds:</label><input type="text" name="spl_2_steam_vards" required>
+    </div>
+    <div>
+        <label>Spēlētāja 3 vārds:</label><input type="text" name="spl_3_vards" required>
+        <label>Spēlētāja 3 uzvārds:</label><input type="text" name="spl_3_uzvards" required>
+        <label> Spēlētāja 3 steam vārds:</label><input type="text" name="spl_3_steam_vards" required>
+    </div>
+    <div>
+        <label>Spēlētāja 4 vārds:</label><input type="text" name="spl_4_vards" required>
+        <label> Spēlētāja 4 uzvārds:</label><input type="text" name="spl_4_uzvards" required>
+        <label> Spēlētāja 4 steam vārds:</label><input type="text" name="spl_4_steam_vards" required>
+    </div>
+        
+    <button type="submit">Iesniegt</button>
 
 {% endblock %}

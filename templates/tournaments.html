@@ -4,17 +4,17 @@
 <div class="tournament-card">
     <img src="/static/esl.jpg" style="width:100px;height:100px" alt="ESL Logo">
     <span>ESL Pro League Season - 21 Datums 09.05 - 16.05 Balvu fonds 1 000 000 $</span>
-    <button class="apply-btn">PIETEIKTIES</button>
+    <a href="{{ url_for('registracija_ESL') }}"><button class="apply-btn">PIETEIKTIES</button></a>
 </div>
 <div class="tournament-card1">
     <img src="/static/IEM.png" style="width:100px;height:100px" alt="IEM Logo">
     <span>IEM Dallas Datums 19.05 - 25.05 Balvu fonds 300 000 $</span>
-    <button class="apply-btn">PIETEIKTIES</button>
+    <a href="{{ url_for('registracija_IEM') }}"><button class="apply-btn">PIETEIKTIES</button></a>
 </div>
 <div class="tournament-card2">
     <img src="/static/blast.png" style="width:100px;height:100px" alt="Blast Logo">
     <span>BLAST.tv Austin Major 2025 Datums 03.06 - 22.06 Balvu fonds 1 250 000 $</span>
-    <button class="apply-btn">PIETEIKTIES</button>
+    <a href="{{ url_for('registracija_BLASTtv') }}"><button class="apply-btn">PIETEIKTIES</button></a>
 </div>
 
 {% endblock %}
